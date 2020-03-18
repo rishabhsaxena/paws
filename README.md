@@ -6,18 +6,16 @@ npm run dev
 
 ## Tools Used
 - NextJS (SSR framework)
-- Material UI (components)
+- Material UI (components and style framework)
 - Next optimize images plugin
 
 ## Improvements
-- style guide lines
-- Add docker and host it on gcloud
 - Audit fixes
 - Cypress tests
 - Add typescript
-- JsDocs
-- Basic authentication: https://github.com/bgold0/nextjs-auth-skeleton/blob/master/pages/_app.js
+- Docs using docs gen
+- Auth flow
 - Scss support
-- pagination
-- confirm before delete
-- Styled components (component based styling)
+- Pagination
+- Confirm before delete
+- Storybook for UI elements
