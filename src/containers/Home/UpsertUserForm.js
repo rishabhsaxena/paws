@@ -37,7 +37,7 @@ const Field = ({
         label={ displayName }
         error={ getErrors(field) }
         options={ optionsByType[field] }
-        id={field}
+        id={ field }
       />
     );
   }
@@ -52,7 +52,7 @@ const Field = ({
       error={ getErrors(field) }
       label={ displayName }
       style={ { minWidth: 300 } }
-      id={field}
+      id={ field }
     />
   );
 };
@@ -102,8 +102,6 @@ const UpsertUserForm = ({
       }
     });
   };
-
-  let errors;
 
   const getErrors = key => {
     const errors = getFieldError(key);

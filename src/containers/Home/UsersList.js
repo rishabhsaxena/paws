@@ -29,7 +29,7 @@ const EditUser = ({ onClick }) => {
 const DeleteUser = ({ onClick }) => {
   return (
     <IconButton aria-label="delete" onClick={ onClick } className="delete-btn">
-      <DeleteIcon style={{ color: pink[500] }} />
+      <DeleteIcon style={ { color: pink[500] } } />
     </IconButton>
   );
 };
