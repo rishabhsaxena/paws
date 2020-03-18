@@ -1,9 +1,9 @@
 /* eslint-disable */
 const withCss = require('@zeit/next-css');
-const withOptimizedImages = require('next-optimized-images');
+const withImages = require('next-images');
 
-module.exports = withOptimizedImages(withCss({
-  webpack: (config, { isServer }) => {
+module.exports = withImages(withCss({
+  webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       '~': __dirname // eslint-disable-line
