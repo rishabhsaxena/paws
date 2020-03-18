@@ -2,18 +2,35 @@
   "name": "with-ant-design",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "node src/server.js",
+    "build": "cd src && NODE_ENV=production next build",
+    "start": "NODE_ENV=production node src/server.js",
+    "lint": "./node_modules/.bin/eslint src",
+    "lint-fixup": "./node_modules/.bin/eslint src --ext .js,.jsx --fix"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
     "@zeit/next-css": "^1.0.1",
-    "antd": "^3.9.2",
     "babel-plugin-import": "^1.9.1",
+    "express": "^4.17.1",
+    "fontfaceobserver": "^2.1.0",
+    "imagemin-optipng": "^7.1.0",
     "next": "latest",
+    "next-optimized-images": "^2.5.5",
     "null-loader": "2.0.0",
+    "rc-form": "^2.4.11",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "styled-components": "^5.0.1",
+    "uuid": "^7.0.2"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-styled-components": "^1.10.7",
+    "eslint": "^6.2.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-react": "^7.14.3"
+  }
 }
