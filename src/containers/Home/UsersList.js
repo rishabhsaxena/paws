@@ -34,10 +34,18 @@ const DeleteUser = ({ onClick }) => {
   );
 };
 
-const UserTableCell = ({ header, user, index, onRemove, onClickEdit }) => {
-  return header.field !== 'actions' ? (
+const UserTableCell = ({ header, user, index, onRemove, onClickEdit, roles, statuses }) => {
+  const getDisplayNameByType = (fieldType, value) => {
+    if (fieldType === 'role') return roles.find(role => role.field === value).displayName;
+    if (fieldType === 'status') return statuses.find(status => status.field === value).displayName;
+    return value;
+  };
+
+  const { field } = header;
+
+  return field !== 'actions' ? (
     <TableCell align={ [0, 1].indexOf(index) !== -1 ? 'left' : 'right' }>
-      {user[header.field]}
+      {getDisplayNameByType(field, user[field])}
     </TableCell>
   ) : (
     <TableCell align="right">
@@ -47,7 +55,7 @@ const UserTableCell = ({ header, user, index, onRemove, onClickEdit }) => {
   );
 };
 
-export default function SimpleTable({ users, headers, onRemove, onClickEdit }) {
+export default function SimpleTable({ users, headers, onRemove, onClickEdit, roles, statuses }) {
   const classes = useStyles();
 
   return (
@@ -76,7 +84,9 @@ export default function SimpleTable({ users, headers, onRemove, onClickEdit }) {
                     index,
                     user,
                     onRemove,
-                    onClickEdit
+                    onClickEdit,
+                    roles,
+                    statuses
                   } }
                 />
               ))}

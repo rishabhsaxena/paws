@@ -88,6 +88,7 @@ const Home = () => {
         roles={ roles }
         onClickEdit={ _onClickEdit }
         onRemove={ _onRemove }
+        statuses={ statuses }
       />
     </Layout>
   );
