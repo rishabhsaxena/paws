@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Fonts from '~/components/Fonts';
+import Fonts from '~/utils/fonts';
 import theme from '~/utils/theme';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/styles';
